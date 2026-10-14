@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>MAY TINH DON GIAN</h2>
+    
+    <label for="so1">Nhap so thu 1: </label>
+    <input type="number" id="so1">
+    <br><br>
+    
+    <label for="so2">Nhap so thu 2: </label>
+    <input type="number" id="so2">
+    <br><br>
+    
+    <button onclick="tinhToan('+')">+</button>
+    <button onclick="tinhToan('-')">-</button>
+    <button onclick="tinhToan('*')">*</button>
+    <button onclick="tinhToan('/')">/</button>
+    
+    <p id="ketqua"></p>
+
+    <script>
+        function tinhToan(phepTinh) {
+            let s1 = document.getElementById("so1").value;
+            let s2 = document.getElementById("so2").value;
+            let thongBao = document.getElementById("ketqua");
+
+            if (s1 === "" || s2 === "") {
+                thongBao.innerHTML = "Vui long nhap du hai so!";
+                return;
+            }
+            let a = parseFloat(s1);
+            let b = parseFloat(s2);
+            let kq = 0;
+            if (phepTinh === '+') {
+                kq = a + b;
+                thongBao.innerHTML = "Ket qua: " + a + " + " + b + " = " + kq;
+            } else if (phepTinh === '-') {
+                kq = a - b;
+                thongBao.innerHTML = "Ket qua: " + a + " - " + b + " = " + kq;
+            } else if (phepTinh === '*') {
+                kq = a * b;
+                thongBao.innerHTML = "Ket qua: " + a + " * " + b + " = " + kq;
+            } else if (phepTinh === '/') {
+                if (b === 0) {
+                    thongBao.innerHTML = "Khong the chia cho 0!";
+                } else {
+                    kq = a / b;
+                    thongBao.innerHTML = "Ket qua: " + a + " / " + b + " = " + kq;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

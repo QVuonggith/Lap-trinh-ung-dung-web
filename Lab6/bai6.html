@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>TRO CHOI OAN TU TI</h2>
+    
+    <button onclick="choi('Đá')">Đá</button>
+    <button onclick="choi('Giấy')">Giấy</button>
+    <button onclick="choi('Kéo')">Kéo</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function choi(nguoiChon) {
+            let luaChonMay = ['Đá', 'Giấy', 'Kéo'];
+            let chiSoNgauNhien = Math.floor(Math.random() * 3);
+            let mayChon = luaChonMay[chiSoNgauNhien];
+
+            let ketQuaStr = "Bạn chọn: " + nguoiChon + "<br>Máy chọn: " + mayChon + "<br>";
+
+            if (nguoiChon === mayChon) {
+                ketQuaStr += "<b>Kết quả: Hòa!</b>";
+            } else if (
+                (nguoiChon === 'Đá' && mayChon === 'Kéo') ||
+                (nguoiChon === 'Giấy' && mayChon === 'Đá') ||
+                (nguoiChon === 'Kéo' && mayChon === 'Giấy')
+            ) {
+                ketQuaStr += "<b>Kết quả: Bạn đã thắng!</b>";
+            } else {
+                ketQuaStr += "<b>Kết quả: Bạn đã thua!</b>";
+            }
+
+            document.getElementById("ketqua").innerHTML = ketQuaStr;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>QUAY THUONG MAY MAN</h2>
+    <button onclick="quayThuong()">Quay thuong</button>
+    <p id="ketqua"></p>
+    <script>
+        function quayThuong() {
+            let danhSachQua = [
+                "Iphone 18 pro max","RTX 5090TI","100 Trieu VND","Dong Ho Rolex","Porsche 911","Ferrari F430","1 Ty  VND"
+            ];
+
+            let chiSoNgauNhien = Math.floor(Math.random() * danhSachQua.length);
+            let phanQua = danhSachQua[chiSoNgauNhien];
+
+            document.getElementById("ketqua").innerHTML = "Phan qua cua ban la: <b>" + phanQua + "</b>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>TINH CHI SO BMI</h2>
+    <label for="chieucao">Nhap chieu cao (m): </label>
+    <input type="number" step="0.01" id="chieucao">
+    <br><br>
+    <label for="cannang">Nhap can nang (kg): </label>
+    <input type="number" step="0.1" id="cannang">
+    <br><br>
+    <button onclick="tinhBMI()">Tinh BMI</button>
+    <p id="ketqua"></p>
+    <script>
+        function tinhBMI() {
+            let chieuCao = document.getElementById("chieucao").value;
+            let canNang = document.getElementById("cannang").value;
+            if (chieuCao === "" || canNang === "" || chieuCao <= 0 || canNang <= 0) {
+                document.getElementById("ketqua").innerHTML = "Vui long nhap day du chieu cao va can nang hop le!";
+                return;
+            }
+            let bmi = canNang / (chieuCao * chieuCao);
+            
+            let bmiLamTron = bmi.toFixed(2);
+            let ketLuan = "";
+            if (bmi < 18.5) {
+                ketLuan = "Gay";
+            } else if (bmi < 25) {
+                ketLuan = "Binh thuong";
+            } else if (bmi < 30) {
+                ketLuan = "Thua can";
+            } else {
+                ketLuan = "Beo phi";
+            }
+
+            document.getElementById("ketqua").innerHTML = "BMI cua ban la: " + bmiLamTron + " - Ket luan: <b>" + ketLuan + "</b>";
+        }
+    </script>
+</body>
+</html>

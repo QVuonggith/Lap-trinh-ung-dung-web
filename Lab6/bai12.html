@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>KIEM TRA NAM NHUAN</h2>
+    <label for="nam">Nhap vao mot nam: </label>
+    <input type="number" id="nam">
+    <br><br>
+    <button onclick="kiemTraNamNhuan()">Kiem tra</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTraNamNhuan() {
+            let year = document.getElementById("nam").value;
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                document.getElementById("ketqua").innerHTML = year + " la nam nhuan."; 
+            } else {
+                document.getElementById("ketqua").innerHTML = year + " khong phai la nam nhuan."; 
+            }
+        }
+    </script>
+</body>
+</html>

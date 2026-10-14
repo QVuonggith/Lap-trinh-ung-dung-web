@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>CHUYEN DOI NHIET DO</h2>
+    <label for="nhietDoC">Nhap nhiet do (C): </label>
+    <input type="number" id="nhietDoC">
+    <br><br>
+    <button onclick="chuyenDoi()">Chuyen doi</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function chuyenDoi() {
+            let c = document.getElementById("nhietDoC").value;
+            let f = (9 / 5) * c + 32;
+            document.getElementById("ketqua").innerHTML =  f + " do F";
+        }
+    </script>
+</body>
+</html>

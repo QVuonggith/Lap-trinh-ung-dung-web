@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>KIEM TRA SO CHAN SO LE</h2>
+    <label for="">Nhap so nguyen</label>
+    <input type="number" id="songuyen">
+    <button onclick="kiemTra()">Kiểm tra</button>
+    <p id="ketqua"></p>
+    <script>
+        function kiemTra(){
+            let so = document.getElementById("songuyen").value;
+            let n = parseInt(so);
+            if (n % 2 === 0) {
+                document.getElementById("ketqua").innerHTML = n + " la so chan";
+            } else {
+                document.getElementById("ketqua").innerHTML = n + " la so le"}
+             }
+          
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>DU DOAN NGHE NGHIEP</h2>
+    <label for="ten">Nhap ten cua ban</label>
+    <input type="text" id="ten">
+    <br><br>
+    <button onclick="duDoanNghe()">Du doan</button>
+    <p id="ketqua"></p>
+    <script>
+        function duDoanNghe() {
+            let ten = document.getElementById("ten").value;
+            let danhSachNghe = [
+                "Lap trinh vien", "Dien vien", "Giao Vien", "Canh sat", "Quan Doi", "Content Creator", "Cong Nhan", "Bao Ve"
+            ];
+            let chiSoNgauNhien = Math.floor(Math.random() * danhSachNghe.length);
+            let ngheNghiep = danhSachNghe[chiSoNgauNhien];
+            document.getElementById("ketqua").innerHTML = ten + ", nghe cua ban la: " + ngheNghiep;
+        }
+    </script>
+</body>
+</html>

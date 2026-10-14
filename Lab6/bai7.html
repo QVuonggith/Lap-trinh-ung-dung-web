@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>XUC XAC MAY MAN</h2>
+    <button onclick="lacXucXac()">Lắc xúc xắc</button>
+    <p id="ketqua"></p>
+    <script>
+        function lacXucXac() {
+            let ketQuaXucXac = Math.floor(Math.random() * 6) + 1;
+            document.getElementById("ketqua").innerHTML = "Kết quả xúc xắc: " + ketQuaXucXac;
+        }
+    </script>
+</body>
+</html>
