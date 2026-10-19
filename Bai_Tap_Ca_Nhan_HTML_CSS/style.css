@@ -1,0 +1,182 @@
+:root {
+    --main: #1428a0;       
+    --main-hover: #0b1a75;
+    --accent: #2f6fed;
+    --light-bg: #eef2fb;
+    --dark: #1b1b1f;
+    --text: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h2 {
+    text-align: center;
+    color: var(--main);
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+/* ===== PHẦN 1: HEADER + NAV ===== */
+header {
+    background-color: var(--main);
+    color: #fff;
+    text-align: center;
+    padding: 24px 16px 0;
+}
+
+header h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 6px 0 18px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+nav a {
+    display: block;
+    padding: 14px 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--accent);
+}
+
+/* ===== PHẦN 2: BANNER + GIỚI THIỆU ===== */
+.banner {
+    width: 100%;
+    height: 280px;
+    background-color: #c9d3ee;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 14px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 28px;
+    background-color: var(--main);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+}
+
+/* ===== PHẦN 3: SẢN PHẨM ===== */
+#products {
+    padding: 40px 20px 50px;
+    background-color: #fff;
+}
+
+.product-list {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    border: 1px solid #d8dce8;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.price {
+    display: inline-block;
+    color: #d62828;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* ===== PHẦN 4: LIÊN HỆ + FOOTER ===== */
+#contact {
+    background-color: var(--light-bg);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact p {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+footer {
+    background-color: var(--dark);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
