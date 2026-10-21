@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findMax(arr) {
+            let max = arr[0];
+
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+
+            return max;
+        }
+
+        document.write(findMax([1, 3, 5, 7, 9]) + "<br>");
+        document.write(findMax([10, 20, 30, 40, 50]) + "<br>");
+        document.write(findMax([-5, -2, -1, -3]));
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Grade</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f2f5;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            background-color: white;
+            width: 350px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>TÍNH XẾP LOẠI</h2>
+
+        <p>Nhập điểm, cách nhau bằng dấu phẩy</p>
+
+        <input type="text" id="scores"
+        placeholder="Ví dụ: 90, 85, 95">
+
+        <br>
+
+        <button onclick="showGrade()">Tính kết quả</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateGrade(arr) {
+            let sum = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+
+            let average = sum / arr.length;
+
+            if (average >= 90) {
+                return "A";
+            } else if (average >= 80) {
+                return "B";
+            } else if (average >= 70) {
+                return "C";
+            } else if (average >= 60) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
+
+        function showGrade() {
+            let input = document.getElementById("scores").value;
+            let arr = input.split(",").map(Number);
+
+            if (input.trim() == "" || arr.some(d => isNaN(d) || d < 0 || d > 100)) {
+                document.getElementById("result").innerHTML =
+                    "Vui lòng nhập điểm từ 0 đến 100!";
+                return;
+            }
+
+            let sum = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+
+            let average = sum / arr.length;
+            let grade = calculateGrade(arr);
+
+            document.getElementById("result").innerHTML =
+                "Điểm trung bình: " + average.toFixed(2) +
+                "<br>Xếp loại: " + grade;
+        }
+    </script>
+</body>
+</html>
